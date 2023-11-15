@@ -16,6 +16,11 @@ const students = [
   },
 ];
 
-students.forEach(function (student) {
-    document.createElement('option').innerHTML += `<option value="${student.id}">${student.name}</option>`;
+const target = document.getElementById('target');
+
+for (let student in students) {
+    let option = document.createElement('option');
+    option.value = students[student].id;
+    option.innerHTML = students[student].name;
+    target.appendChild(option);
 }
