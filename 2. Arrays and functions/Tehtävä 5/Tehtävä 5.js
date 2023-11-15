@@ -1,8 +1,14 @@
-let number;
+let number = Number(prompt("Give a number:"));
 let numbers = [];
 
-do {
-    number = prompt("Give a number");
+while (!numbers.includes(number)) {
     numbers.push(number);
-}while (!numbers.includes(number));
+    number = Number(prompt("Give a number:"));
+}
 
+console.log("You gave the number " + number + " twice.");
+console.log(numbers.sort((a, b) => a - b));
+
+for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+}
